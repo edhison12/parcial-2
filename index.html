@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tienda de Videojuegos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Tienda de Videojuegos Free to Play</h1>
+        <input type="text" id="search" placeholder="Buscar juegos..." oninput="searchGames()">
+        <select id="category-filter" onchange="filterGames()">
+            <option value="">Todas las Categorías</option>
+            <option value="aventura">Aventura</option>
+            <option value="estrategia">Estrategia</option>
+            <option value="deportes">Deportes</option>
+            <option value="acción">Acción</option>
+        </select>
+        <button id="theme-toggle">Modo Oscuro</button>
+    </header>
+
+    <main>
+        <section id="featured-games" class="featured-section">
+            <h2>Juegos Recomendados</h2>
+            <div id="featured-games-list" class="games-list"></div>
+        </section>
+
+        <section id="all-games" class="all-games-section">
+            <h2>Todos los Juegos</h2>
+            <div id="games-list" class="games-list"></div>
+        </section>
+
+        <section id="developer-registration" class="registration-section">
+            <h2>Registro de Desarrolladores</h2>
+            <form id="register-form" onsubmit="registerGame(event)">
+                <div class="form-group">
+                    <label for="name">Nombre:</label>
+                    <input type="text" id="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Correo Electrónico:</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="game">Nombre del Juego:</label>
+                    <input type="text" id="game" required>
+                </div>
+                <div class="form-group">
+                    <label for="link">Enlace del Juego:</label>
+                    <input type="url" id="link" placeholder="https://ejemplo.com" required>
+                </div>
+                <button type="submit" class="button">Registrar Juego</button>
+                <div id="notification" class="notification"></div>
+            </form>
+        </section>
+
+        <section id="reviews" class="reviews-section">
+            <h2>Reseñas</h2>
+            <div id="reviews-list" class="reviews-list"></div>
+        </section>
+
+        <section id="events" class="events-section">
+            <h2>Próximos Eventos</h2>
+            <div id="events-list" class="events-list"></div>
+        </section>
+
+        <section id="latest-releases" class="latest-releases-section">
+            <h2>Últimos Lanzamientos</h2>
+            <div id="latest-releases-list" class="latest-releases-list"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Tienda de Videojuegos. Todos los derechos reservados.</p>
+        <div class="social-media">
+            <a href="#">Facebook</a>
+            <a href="#">Twitter</a>
+            <a href="#">Instagram</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
